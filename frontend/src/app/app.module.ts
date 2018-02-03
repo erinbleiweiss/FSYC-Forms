@@ -7,6 +7,9 @@ import { DiagnosticianComponent } from './diagnostician/diagnostician.component'
 import { ParentComponent } from './parent/parent.component';
 import { TeacherComponent } from './teacher/teacher.component';
 import { routing } from "./app.routing";
+import { DiagNavbarComponent } from './diagnostician/diag-navbar/diag-navbar.component';
+
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -14,13 +17,16 @@ import { routing } from "./app.routing";
     HomeComponent,
     DiagnosticianComponent,
     ParentComponent,
-    TeacherComponent
+    TeacherComponent,
+    DiagNavbarComponent
   ],
   imports: [
     BrowserModule,
     routing
   ],
-  providers: [],
+  providers: [
+    AuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../services/auth.service'
+
 
 @Component({
   selector: 'fsyc-diagnostician',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DiagnosticianComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
+  }
+
+  ngAfterViewInit() {
+    this.authService.googleInit(document.getElementById('googleBtn'));
   }
 
 }
